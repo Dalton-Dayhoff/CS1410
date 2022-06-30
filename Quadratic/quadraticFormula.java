@@ -12,22 +12,22 @@ public class quadraticFormula{
         
         double delta = 0.000001d;
 
-        if (a - 0 < delta){
+        if (a < delta && a > -delta){
             if (b - 0 < delta){
-                System.out.println("You have entered a constant; thus, there are no roots");
+                System.out.println("You have entered a constant; thus, there are no roots.");
             }
             else{
-                System.out.println("There is one root for the quadratic equation with these coefficiants.");
+                System.out.println("This is a linear system, meaning there is only one root.");
                 double x = -c/b;
                 System.out.println("r1 = " + x);
             }
         }
         else{
-            double discriminant = (b * b) - 4 * a * c;
+            double discriminant = (b * b) - (4 * a * c);
             if (discriminant < 0){
                 System.out.println("There are no real roots for the quadratic equation with these coefficiants.");
             }
-            else if (discriminant - 0 < delta){
+            else if (discriminant < delta && discriminant > -delta){
                 System.out.println("There is one root for the quadratic equation with these coefficiants.");
                 double x = -b/(2 * a);
                 System.out.println("r1 = " + x);

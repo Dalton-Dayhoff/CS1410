@@ -6,10 +6,30 @@ public class quadraticFormula{
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter the values for a, b, c: ");
-        double a = input.nextDouble();
-        double b = input.nextDouble();
-        double c = input.nextDouble();
-        
+        double a = 0;
+        double b = 0;
+        double c = 0;
+        if (input.hasNextDouble()){
+            a = input.nextDouble();
+        }else{
+            String bad = input.next();
+            System.out.println("You entered " + bad + " for a, which is not a number.");
+            System.exit(0);
+        }
+        if (input.hasNextDouble()){
+            b = input.nextDouble();
+        }else{
+            String bad = input.next();
+            System.out.println("You entered " + bad + " for b, which is not a number.");
+            System.exit(0);
+        }if (input.hasNextDouble()){
+            c = input.nextDouble();
+        }else{
+            String bad = input.next();
+            System.out.println("You entered " + bad + " for c, which is not a number.");
+            System.exit(0);
+        }
+        input.close();
         double delta = 0.000001d;
 
         if (a < delta && a > -delta){

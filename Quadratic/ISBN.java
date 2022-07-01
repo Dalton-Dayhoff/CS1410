@@ -5,8 +5,15 @@ public class ISBN {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter the first 9 digits of an ISBN: ");
-        int firstNine = input.nextInt();
-
+        int firstNine = 0;
+        if (input.hasNextInt()){
+            firstNine = input.nextInt();
+        }else{
+            String badInput = input.next();
+            System.out.println("You entered " + badInput + ", which is not an ISBN number");
+            System.exit(0);
+        }
+        input.close();
         long[] findDValues;
         findDValues = new long[9];
         long[] nValues;
@@ -31,8 +38,5 @@ public class ISBN {
         }else{
             System.out.print(finalDigit);
         }
-        
-        
-
     }
 }

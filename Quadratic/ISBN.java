@@ -20,7 +20,7 @@ public class ISBN {
         nValues = new long[9];
         nValues[0] = firstNine;
         long tenthDigit = 0;
-
+        //Parsing the integer into values in an array
         for(int i = 0; i < findDValues.length; i++){
             long factor = Math.round(100000000/Math.pow(10, i));
             if (i > 0) {
@@ -30,7 +30,9 @@ public class ISBN {
                 findDValues[i] = Math.round(firstNine/factor);
             }
             tenthDigit += (findDValues[i] * (i+1));
-        }long finalDigit = Math.round(tenthDigit % 11);
+        }
+        //Finding the final digit
+        long finalDigit = Math.round(tenthDigit % 11);
         for(long element: findDValues){
             System.out.print(element);
         }if (finalDigit > 9){

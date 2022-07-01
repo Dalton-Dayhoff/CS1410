@@ -31,7 +31,7 @@ public class quadraticFormula{
         }
         input.close();
         double delta = 0.000001d;
-
+        // Finding values if a is 0
         if (a < delta && a > -delta){
             if (b - 0 < delta){
                 System.out.println("You have entered a constant; thus, there are no roots.");
@@ -42,6 +42,7 @@ public class quadraticFormula{
                 System.out.println("r1 = " + x);
             }
         }
+        //Finding values for quadratic formula
         else{
             double discriminant = (b * b) - (4 * a * c);
             if (discriminant < 0){

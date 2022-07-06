@@ -26,8 +26,7 @@ public class Pyramid2 {
                     numToPrint *= 2;
                 }else{
                     numToPrint /= 2;
-                }
-                
+                }  
             }System.out.print(System.lineSeparator());
 
         }

@@ -33,7 +33,7 @@ public class Inside {
         System.out.println("\n--- Report of Points and Rectangles ---\n");
         for (int i = 0; i < rectLeft.length; i++){
             for (int j = 0; j < ptX.length; j++){
-                boolean inRectangle = isPointINsideRectangle(ptX[j], ptY[j], rectLeft[i], rectTop[i], rectWidth[i], rectHeight[i]);
+                boolean inRectangle = isPointInsideRectangle(ptX[j], ptY[j], rectLeft[i], rectTop[i], rectWidth[i], rectHeight[i]);
                 reportPoint(ptX[j], ptY[j]);
                 if (inRectangle) {
                     System.out.print(" is inside ");
@@ -45,7 +45,7 @@ public class Inside {
         }
     }   
 
-    private static boolean isPointInsideCircle(double ptX, double ptY, double circleX, double circleY, double circleRadius) {
+    static boolean isPointInsideCircle(double ptX, double ptY, double circleX, double circleY, double circleRadius) {
         double deltaX = ptX - circleX;
         double deltaY = ptY - circleY;
         double distance = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
@@ -55,7 +55,7 @@ public class Inside {
         } return false;
     }
 
-    private static boolean isPointINsideRectangle(double ptX, double ptY, double rLeft, double rTop, double rWidth, double rHeight) {
+    static boolean isPointInsideRectangle(double ptX, double ptY, double rLeft, double rTop, double rWidth, double rHeight) {
         double rightSide = rLeft + rWidth;
         double bottom = rTop - rHeight;
 
@@ -64,15 +64,15 @@ public class Inside {
         } return false;
     }
 
-    private static void reportPoint(double x, double y) {
+    static void reportPoint(double x, double y) {
         System.out.printf("Point(%.1f, %.1f)", x, y);
     }
 
-    private static void reportCircle(double x, double y, double r) {
+    static void reportCircle(double x, double y, double r) {
         System.out.printf("Circle(%.1f, %.1f) Radius: %.1f\n", x, y, r);
     }
 
-    private static void reportRectangle(double left, double width, double top, double height) {
+    static void reportRectangle(double left, double width, double top, double height) {
         double rightSide = left + width;
         double bottom = top - height;
         System.out.printf("Rectangle(%.1f, %.1f, %.1f, %.1f)\n", left, top, rightSide, bottom);
